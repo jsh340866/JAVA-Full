@@ -1,5 +1,7 @@
 package CH01;
 
+import java.nio.charset.StandardCharsets;
+
 public class C05변수_자료형 {
 
 	public static void main(String[] args) {
@@ -149,6 +151,16 @@ public class C05변수_자료형 {
 		String name = "홍길동"; // 상수POOL에 저장된 객체(홍길동)의 주소값을 가져옴
 		String job = "프로그래머";
 		
+		System.out.println("UTF-8기준 지정 크기: " + name.getBytes(StandardCharsets.UTF_8).length);
+		System.out.println("UTF-8기준 지정 크기: " + job.getBytes(StandardCharsets.UTF_8).length);
+
+		
+		// 사이즈 확인
+		char ch = '홍';		//16bit == 2byte 사용
+		String str= "홍";	//24bit == 3byte 사용
+		
+		System.out.println("ch 실제 크기(bit): " + Integer.toBinaryString(ch).length());
+		System.out.println("str 실제 크기(byte): " + str.getBytes(StandardCharsets.UTF_8).length);		
 		
 		
 
