@@ -20,13 +20,13 @@ public class C01Scanner {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("num1 입력 : ");
+//		System.out.println("num1 입력 : ");
 		int num1 = sc.nextInt();	// 엔터(\n), 스페이스바
 		
-		System.out.println("num2 입력 : ");
+//		System.out.println("num2 입력 : ");
 		int num2 = sc.nextInt();	// 엔터(\n), 스페이스바
 		
-		System.out.println("num3 입력 : ");
+//		System.out.println("num3 입력 : ");
 		int num3 = sc.nextInt();	// 엔터(\n), 스페이스바
 		
 		
