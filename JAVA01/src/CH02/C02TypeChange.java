@@ -8,11 +8,11 @@ public class C02TypeChange {
 		//기본적으로 불가능하기 때문에 강제로 자료형을 바꾸어 전달한다
 		//데이터 손실의 염려가 있다
 		int intValue = 20000;
-		char charValue = intValue;
-		System.out.println(charValue);
+		char charValue = (char)intValue;
+		System.out.println((int)charValue);
 		
 		long longValue = 500;
-		intValue = longValue;
+		intValue = (int)longValue;
 		System.out.println(intValue);
 		
 		//데이터손실!
