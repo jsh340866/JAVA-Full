@@ -21,7 +21,7 @@ public class C02Ex {
 		String grade = ((kor< 40) || (eng<40) || (math<40)) ? "불합격" : (avg >= 70) ? "합격" : "불합격";
 		System.out.println("시험결과 : " + grade);
 		
-			
+	
 
 		//2.미니문제(%연산자) - N%2==0
 		//키보드로 부터 정수값 2개를 입력받아
@@ -31,9 +31,10 @@ public class C02Ex {
 		System.out.printf("정수 2개를 입력해주세요 >>> ");
 		int n1 = sc.nextInt();
 		int n2 = sc.nextInt();
-		String S = ((n1+n2)%2==0) ? "두수의 합은 짝수입니다" : "두수의 합은 홀수입니다";
-		System.out.println(S);
+		String sum = ((n1+n2)%2==0) ? "두수의 합은 짝수입니다" : "두수의 합은 홀수입니다";
+		System.out.println(sum);
 		
+		sc.close();
 		
 	}
 
