@@ -15,19 +15,19 @@ public class C01Basic {
 //		System.out.println("b/a="+ (b / a)); //나누기 - 몫
 //		System.out.println("a%b="+ (a % b));//나누기 - 나머지(1.짝홀수구분,2.배수구분,3.자리수제한,4.끝자리구하기)
 //		System.out.println("-a="+ -a);
-		
+
 		// 문제
 //		두수를 입력 받아 두수의 합/차(n1>n2)/곱을 출력하는 프로그램을 만들어보세요
-		
-		Scanner sc = new Scanner(System.in);
-		System.out.printf("숫자를 두 개 입력해 주세요 >>> ");
-		int n1 = sc.nextInt();
-		int n2 = sc.nextInt();
-		System.out.printf("두수의 합 : %d\n", n1+n2);
-		System.out.printf("두수의 차 : %d\n", n1-n2);
-		System.out.printf("두수의 곱 : %d\n", n1*n2);
-		
-		
+
+//		Scanner sc = new Scanner(System.in);
+//		System.out.printf("숫자를 두 개 입력해 주세요 >>> ");
+//		int n1 = sc.nextInt();
+//		int n2 = sc.nextInt();
+//		System.out.printf("두수의 합 : %d\n", n1+n2);
+//		System.out.printf("두수의 차 : %d\n", (n1>n2) ? n1-n2 : n2-n1);
+//		System.out.printf("두수의 곱 : %d\n", n1*n2);
+//		
+//		sc.close();
 
 		// -------------------------
 		// 대입 연산자
@@ -81,8 +81,8 @@ public class C01Basic {
 
 //		int n1 = 100;
 //		int n2 = 200;
-//		boolean n3 = (n1<100) && (n2++>0);
-//		System.out.printf("%d %d %b\n",n1,n2,n3);
+//		boolean n3 = (n1 < 100) && (n2++ > 0);
+//		System.out.printf("%d %d %b\n", n1, n2, n3);
 
 		// -------------------------
 		// 논리 부정 연산자
@@ -95,7 +95,7 @@ public class C01Basic {
 //
 //		play = !play;
 //		System.out.println(play);
-//		
+		
 
 		// -------------------------
 		// 증감연산자
@@ -109,12 +109,12 @@ public class C01Basic {
 //		System.out.printf("a=%d , b=%d , c=%d, d=%d", a, b, c, d);
 
 		// -------------------------
-		// 삼항 연산자
+		// 삼항 연산자 ( 중요 ) 
 		// -------------------------
 //		// (조건식)? 참인경우 실행코드 : 거짓인경우 실행코드;
-//		int score = 85;
-//		char grade = (score > 90) ? 'A' : ((score > 80) ? 'B' : 'C');
-//		System.out.println(score + "점은 " + grade + "등급입니다.");
+		int score = 85;
+		char grade = (score > 90) ? 'A' : ((score > 80) ? 'B' : 'C');
+		System.out.println(score + "점은 " + grade + "등급입니다.");
 
 	}
 
