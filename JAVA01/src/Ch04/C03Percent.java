@@ -43,7 +43,7 @@ public class C03Percent {
 //		Random rnd = new Random();
 //		
 //		while (true) {
-//			System.out.println(rnd.nextInt(45)  + 1); //N%5 과 동일 (0~44)
+//			System.out.println(rnd.nextInt(45) + 1 ); //N%5 과 동일 (0~44)
 //			Thread.sleep(500);
 //		}
 
@@ -66,10 +66,10 @@ public class C03Percent {
 //		System.out.println("왼쪽 끝 2자리 : " + (num / 1000));
 //		System.out.println("왼쪽 끝 3자리 : " + (num / 100));
 //		System.out.println("왼쪽 끝 4자리 : " + (num / 10));
-		
-		//정수 하나를 입력받아 거꾸로 저장해보세요(반복문법 이후 풀어보기)%,/연산 동시이용할 것
-		//예
-		
+
+		// 정수 하나를 입력받아 거꾸로 저장해보세요(반복문법 이후 풀어보기)%,/연산 동시이용할 것
+		// 예
+
 //		입력: 1234
 //		저장
 //		int reverse = 4321;
