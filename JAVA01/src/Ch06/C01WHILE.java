@@ -132,6 +132,24 @@ public class C01WHILE {
 //			i++;
 //		}
 
+		// 문제5. 구구단 N단 받아서 찍어보기 (n>=2 && n<=9) vs (n<2 || n>9)
+		Scanner sc = new Scanner(System.in);
+		System.out.printf("단을 입력해주세요. >>> ");
+		int n = sc.nextInt();
+		
+		while(n<2 || n>9) {
+			System.out.printf("2이상 9이하의 값 입력해야 합니다. >>> ");
+			n = sc.nextInt();
+		}
+		
+		int dan = n;
+		int i = 9;
+		while (i > 0) {
+			System.out.printf("%d x %d = %d\n", dan, i, dan*i);
+			i--;
+		}
+
+		
 	}
 
 }
