@@ -29,7 +29,9 @@ public class C05기타반복처리 {
 //		}
 		
 		//
-		lists.stream().forEach((item)->{System.out.println(item);});
+		lists.stream().forEach(item->System.out.println(item));
+									
+		
 		
 		
 
