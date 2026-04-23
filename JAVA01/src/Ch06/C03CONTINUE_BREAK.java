@@ -92,16 +92,15 @@ public class C03CONTINUE_BREAK {
 			
 			if(i%3==0) {
 				i++;
-				continue;
+				continue; // 컨티뉴 사용은 지양하라
 			}
 			
 			System.out.println("i : " + i);
 			sum+=i;
 			i++;
-			
-			
 		}
 		System.out.println("SUM : " + sum);
+		
 		
 		
 	}
