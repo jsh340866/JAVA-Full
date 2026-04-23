@@ -225,28 +225,28 @@ public class C02WHILE {
 		// ***** 
 		// *** 
 		// * 
-		Scanner sc = new Scanner(System.in);
-		int h = sc.nextInt();
-		int i = 1;
-		int k = 1;
-		while (i < (h+1)) {
-			int j = 1;
-			while (j/2 < k) {
-				System.out.printf("*");
-				j++;
-			}
-			System.out.println();
-			
-			if(i<(h+1)/2) {
-				k++;
-			}
-			else {
-				k--;
-			}
-
-			i++;
-		}
-		sc.close();
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		int i = 1;
+//		int k = 1;
+//		while (i < (h+1)) {
+//			int j = 1;
+//			while (j/2 < k) {
+//				System.out.printf("*");
+//				j++;
+//			}
+//			System.out.println();
+//			
+//			if(i<(h+1)/2) {
+//				k++;
+//			}
+//			else {
+//				k--;
+//			}
+//
+//			i++;
+//		}
+//		sc.close();
 
 //		int i = 1;      // 전체 반복 횟수 (1~7줄)
 //		int starCount = 1; // 실제 찍을 별의 기준 (1->2->3->4->3->2->1)
@@ -297,15 +297,17 @@ public class C02WHILE {
 		// *****
 		//*******
 
-//		i(행)				j(공백)				k(별)											
-//		0						0-2					0-0
-//		1						0-1					0-2
-//		2						0-0					0-4
-//		3						x						0-6
-//		----------------------------
-//		i=0					j=0					k=0
-//		i++					j++					k++
-//		i<4					j<3-i				k<=i*2
+//		i(행)				j(공백)						k(별)											
+//		0						0~(h-2)-0				0-0
+//		1						0~(h-2)-1				0-2
+//		2						0~(h-2)-2				0-4
+//		3						0~(h-2)-3				0-6
+//		...					...
+//		h-1					0~(h-2)-(h-1)		
+//		-----------------------------------
+//		i=0					j=0							k=0
+//		i++					j++							k++
+//		i<4					j<(h-1)-i				k<=i*2
 
 //		int i = 0;
 //		while (i < 4) {
@@ -329,7 +331,37 @@ public class C02WHILE {
 		// *****
 		//  ***
 		//   *
-
+//	i(행)				j(공백)				k(별)											
+//	0						x						0-6
+//	1						0-0					0-4
+//	2						0-1					0-2
+//	3						0-2					0-0
+//	----------------------------
+//	i=0					j=0					k=0
+//	i++					j++					k++
+//	i<h					j<i					k<=(h-1)*2-(i*2)
+		
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		
+//		int i = 0;
+//		while (i < h) {
+//			int j = 0;
+//			while (j < i) {
+//				System.out.printf(" ");
+//				j++;
+//			}
+//			int k = 0;
+//			while (k <= (h-1)*2-(i*2)) {
+//				System.out.printf("*");
+//				k++;
+//			}
+//			System.out.println();
+//			i++;
+//		}
+//		sc.close();
+		
+		
 		//8) 고정높이
 		//   *
 		//  ***
@@ -338,6 +370,45 @@ public class C02WHILE {
 		// *****
 		//  ***
 		//   *
+		
+//	i(행)				j(공백)				k(별)											
+//	0						0-2					0-0
+//	1						0-1					0-2
+//	2						0-0					0-4
+//	3						x						0-6
+//	4						0-0					0-4
+//	5						0-1					0-2
+//	6						0-2					0-0
+//	----------------------------
+//	i=0					j=0					k=0
+//	i++					j++					k++
+//	i<h					j<i					k<=(h-1)*2-(i*2)
+		
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		int i = 0;
+//		int l = 0;
+//		while (i < h) {
+//			int j = 0;
+//			while (j < (h/2) - l) {
+//				System.out.printf(" ");
+//				j++;
+//			}
+//			int k = 0;
+//			while (k <= l*2) {
+//				System.out.printf("*");
+//				k++;
+//			}
+//			if ( i < (h/2)) {
+//				l++;
+//			}
+//			else l--;
+//			
+//			System.out.println();
+//			i++;
+//		}
+//		sc.close();
+
 		
 		//9)
 		//높이 : 7
@@ -348,6 +419,31 @@ public class C02WHILE {
 		// *****
 		//  ***
 		//   *	
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		int i = 0;
+//		int l = 0;
+//		while (i < h) {
+//			int j = 0;
+//			while (j < (h/2) - l) {
+//				System.out.printf(" ");
+//				j++;
+//			}
+//			int k = 0;
+//			while (k <= l*2) {
+//				System.out.printf("*");
+//				k++;
+//			}
+//			if ( i < (h/2)) {
+//				l++;
+//			}
+//			else l--;
+//			
+//			System.out.println();
+//			i++;
+//		}
+//		sc.close();
+				
 		
 		// 10)
 		// 높이 : 7
@@ -358,6 +454,36 @@ public class C02WHILE {
 		//  ***
 		// *****
 		//*******
+		
+		Scanner sc = new Scanner(System.in);
+		int h = sc.nextInt();
+		int i = 0;
+		int l = 0;
+		while (i < h) {
+			int j = 0;
+			while (j < l) {
+				System.out.printf(" ");
+				j++;
+			}
+			int k = 0;
+			while (k < h-(l*2)) {
+				System.out.printf("*");
+				k++;
+			}
+			if ( i < (h/2)) {
+				l++;
+			}
+			else l--;
+			
+			System.out.println();
+			i++;
+		}
+		sc.close();
+		
+		
+		
+		
+		
 	}
 
 }
