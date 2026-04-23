@@ -608,7 +608,7 @@ public class C02WHILE {
 				}
 				// 별
 				int k = 0;
-				while (k <= 2*i-h+1) {
+				while (k <= (2*i)-(h+1)) {
 					System.out.printf("*");
 					k++;
 				}
