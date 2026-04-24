@@ -72,6 +72,7 @@ class C08Simple {
 	// toString재정의
 	@Override
 	public String toString() {
+		
 		return "C08Simple [n1=" + n1 + ", n2=" + n2 + ", n3=" + n3 + ", n4=" + n4 + "]";
 	}
 
