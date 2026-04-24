@@ -5,15 +5,15 @@ class Person {
 	int age;
 
 	public Person(String name, int age) {
-		System.out.println("Person [name=" + name + ", age=" + age + "]");
 		this.name = name;
 		this.age = age;
+//		System.out.println("Person [name=" + name + ", age=" + age + "]");
 	}
 
-	@Override
-	public String toString() {
-		return "Person [name=" + name + ", age=" + age + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Person [name=" + name + ", age=" + age + "]";
+//	}
 	
 }
 
@@ -23,7 +23,7 @@ public class C10Ex{
 		System.out.println(num);
 	}
 
-	public static void func2(Object obj) // 파라미터:Reference(주소값 저장)
+	public static void func2(Person obj) // 파라미터:Reference(주소값 저장)
 	{
 		System.out.println(obj);
 	}
