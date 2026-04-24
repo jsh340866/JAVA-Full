@@ -53,6 +53,7 @@ class Customer {
 	public String toString() {
 		return "Customer [보유금액=" + myMoney + ", 커피잔수=" + coffeeCnt + "]";
 		// 14 - 호출된 Customer.toString() 출력!
+		
 	}
 	
 }
@@ -64,7 +65,7 @@ class CafeOwner {
 	int price;
 	
 	public int make(int money) {
-		int makingCnt = money/price; // 8 - 주문 된 커피 잔수를 계산 후 makingCnt 변수에 저장
+		int makingCnt = money/price; // 8 - 주문 된 커피 잔수를 계산 후 makingCnt(지역변수) 변수에 저장
 		coffeCnt -= makingCnt;	// 9 - 커피재고에서 주문 커피 잔수를 제거
 		myMoney += (makingCnt)*price; // 10 - 보유금액에 받은 돈을 저장
 		return makingCnt; // 11 - 커피 잔수를 return!

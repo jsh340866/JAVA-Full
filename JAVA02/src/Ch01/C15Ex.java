@@ -41,6 +41,7 @@ class Audience {
 //기능	: 발권하기(관객의 돈) : 티켓개수
 //		  issue(int money) : int
 
+
 class TicketSeller {
 	int myMoney;
 	int ticketCnt;
