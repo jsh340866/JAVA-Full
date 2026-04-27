@@ -1,5 +1,6 @@
 package Ch02;
 
+import java.util.*;
 
 class Profile
 {
@@ -10,13 +11,28 @@ class Profile
 	private String major;
 	// 생성자
 	// 1)디폴트생성자 삽입
+	public Profile() {
+		super();
+	}
 	// 2)모든 인자 받는 생성자 삽입
 	// 3)"홍길동,대구,프로그래머,컴퓨터공학" 을 받아 ,를 기준으로 잘라서 각 멤버에 저장
+	public Profile(String string) {
+		super();
+		this.name = name;
+		this.addr = addr;
+		this.job = job;
+		this.major = major;
+	}
 	
+
 	// 기능
 	// 1) 멤버변수를 은닉화 하고 getter and setter 를 만들어줍니다
 	
 	// 2) toString 코드를 삽입
+	@Override
+	public String toString() {
+		return "Profile [name=" + name + ", addr=" + addr + ", job=" + job + ", major=" + major + "]";
+	}
 	
 	// 3) boolean isContain(String findstr) 함수 완성하기
 	// findstr의 문자열이 각멤버인 name,addr,job,major 중 하나라도 포함되어 있으면 true 리턴
