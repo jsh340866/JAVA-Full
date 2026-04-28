@@ -142,7 +142,7 @@ public class C06Ex {
 			과목별총점[2] += scores[i][2];
 			
 		}
-		System.out.println(과목별총점);
+		System.out.println(과목별총점[0] + 과목별총점[1] + 과목별총점[2]);
 
 		sc.close();
 
