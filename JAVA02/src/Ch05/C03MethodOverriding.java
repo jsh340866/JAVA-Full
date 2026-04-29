@@ -20,35 +20,35 @@ package Ch05;
 //3) 함수의 본문 변경? o
 //4) 목적? 다형성이 목적
 
-class Animal {
-	void sound() {
-		System.out.println("소리낸다!");
-	}
-}
-
-class Dog extends Animal {
-	void sound() {
-		System.out.println("멍멍 소리낸다!");
-	}
-}
-
-class Cat extends Animal {
-	@Override
-	void sound() {
-		System.out.println("야옹 소리낸다!!");
-	}
-	
-}
+//class Animal {
+//	void sound() {
+//		System.out.println("소리낸다!");
+//	}
+//}
+//
+//class Dog extends Animal {
+//	void sound() {
+//		System.out.println("멍멍 소리낸다!");
+//	}
+//}
+//
+//class Cat extends Animal {
+//	@Override
+//	void sound() {
+//		System.out.println("야옹 소리낸다!!");
+//	}
+//	
+//}
 
 public class C03MethodOverriding {
 
 	public static void main(String[] args) {
 		
-		Dog tori = new Dog();
-		tori.sound();
-		System.out.println("---------------");
-		Cat navi =new Cat();
-		navi.sound();
+//		Dog tori = new Dog();
+//		tori.sound();
+//		System.out.println("---------------");
+//		Cat navi =new Cat();
+//		navi.sound();
 
 	}
 
