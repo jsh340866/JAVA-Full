@@ -28,7 +28,10 @@ public class C09Ex01BasicUpCasting {
         // 3. 업캐스팅된 참조로 makeSound() 메서드를 호출해보세요
         DA.makeSound();
         // 4. 업캐스팅된 참조로 fetch() 메서드를 호출해보고 결과를 확인하세요
-        //DA.fetch(); // // 컴파일 에러: makeSound() 메서드는 Animal 타입에서 접근 불가
+        //DA.fetch(); // // 컴파일 에러: fetch() 메서드는 Animal 타입에서 접근 불가
+        Dog down = (Dog)DA;
+        down.fetch();
+        ((Dog)DA).fetch();
  
     }
 } 
