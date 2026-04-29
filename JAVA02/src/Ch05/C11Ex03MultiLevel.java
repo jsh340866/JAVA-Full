@@ -32,9 +32,15 @@ public class C11Ex03MultiLevel {
         System.out.println("=== 연습문제 3: 다중 레벨 ===");
         // 문제: 다음 단계를 수행하는 코드를 작성하세요
         // 1. ColoredCircle 인스턴스를 생성하고 Shape 타입으로 업캐스팅하세요
+        Shape c1 = new ColoredCircle();
         // 2. 업캐스팅된 참조로 draw() 메서드를 호출해보세요
+        c1.draw();
         // 3. Shape -> Circle로 다운캐스팅하고 calculateArea() 메서드를 호출해보세요
+        Circle c2 = (Circle)c1;
+        c2.calculateArea();
         // 4. Circle -> ColoredCircle로 다운캐스팅하고 applyColor() 메서드를 호출해보세요
+        ColoredCircle c3 = (ColoredCircle)c2;
+        c3.applyColor();
         // 5. 각 단계에서 어떤 메서드에 접근 가능한지 확인해보세요
         
 
