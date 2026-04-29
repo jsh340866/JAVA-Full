@@ -20,7 +20,7 @@
 ////
 ////class Point3D extends Point2D{
 ////	
-////	int z;
+////	int z;	//extends 확장
 ////	
 ////	Point3D() {
 ////		System.out.println("Point3D 디폴트생성자 호출!");
