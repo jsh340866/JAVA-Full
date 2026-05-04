@@ -36,16 +36,26 @@ public class C04GenericMain {
 		for(T el : arr)
 			System.out.println(el);
 	}
-	public static void PrintByObject() {
+	public static void PrintByObject(Object [] arr) {
+		for (Object el : arr) {
+			System.out.println(el);
+		}
 		
 	}
 	
 	public static void main(String[] args) {
 		Tiger arr1 [] = {new Tiger("시베리안호랑이"), new Tiger("신사동호랭이"), new Tiger("타이거Jk")};
-		PrintGeneric(arr1);
+//		PrintGeneric(arr1);
 		
 		Panda arr2 [] = {new Panda("중국 팬더"), new Panda("쿵푸 팬더"), new Panda("래서팬더")};
-		PrintGeneric(arr2);
+//		PrintGeneric(arr2);
+		
+		Object arr3 [] = {new Panda("쿵푸팬더3"), new Tiger("아프리카호랑이"), new Panda("사실오랑우탄"), new Person("홍길동",30)};
+//		PrintGeneric(arr3);
+		PrintByObject(arr3);
+		
+		
+		
 	}
 
 }
