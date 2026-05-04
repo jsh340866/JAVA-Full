@@ -309,21 +309,25 @@ public class C02WHILE {
 //		i++					j++							k++
 //		i<4					j<(h-1)-i				k<=i*2
 
-//		int i = 0;
-//		while (i < 4) {
-//			int j = 0;
-//			while (j < 3 - i) {
-//				System.out.printf(" ");
-//				j++;
-//			}
-//			int k = 0;
-//			while (k <= i * 2) {
-//				System.out.printf("*");
-//				k++;
-//			}
-//			System.out.println();
-//			i++;
-//		}
+		
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int i = 0;
+		while (i < n) {
+			int j = 0;
+			while (j < n - (i+1)) {
+				System.out.printf(" ");
+				j++;
+			}
+			int k = 0;
+			while (k <= i * 2) {
+				System.out.printf("*");
+				k++;
+			}
+			System.out.println();
+			i++;
+		}
+		sc.close();
 
 // -----------------------------------------------------------------------
 
@@ -574,49 +578,49 @@ public class C02WHILE {
 		// *****
 		//*******
 
-		Scanner sc = new Scanner(System.in);
-		int h = sc.nextInt();
-		
-		while(h%2==0 || h<=1) {
-			System.out.printf("다시 입력해주세요.(홀수만) >>> ");
-			h = sc.nextInt();
-		}
-		
-		
-		int i = 0;
-		while (i < h) {
-			if (i <= h/2) {
-				// 공백
-				int j = 0;
-				while (j < i ) {
-					System.out.printf(" ");
-					j++;
-				}
-				// 별
-				int k = 0;
-				while (k < h - i*2) {
-					System.out.printf("*");
-					k++;
-				}
-			}
-			else {
-			// 공백
-				int j = 0;
-				while (j < (h-i)-1) {
-					System.out.printf(" ");
-					j++;
-				}
-				// 별
-				int k = 0;
-				while (k <= (2*i)-(h+1)) {
-					System.out.printf("*");
-					k++;
-				}
-			}
-			System.out.println();
-			i++;
-		}		
-		sc.close();
+//		Scanner sc = new Scanner(System.in);
+//		int h = sc.nextInt();
+//		
+//		while(h%2==0 || h<=1) {
+//			System.out.printf("다시 입력해주세요.(홀수만) >>> ");
+//			h = sc.nextInt();
+//		}
+//		
+//		
+//		int i = 0;
+//		while (i < h) {
+//			if (i <= h/2) {
+//				// 공백
+//				int j = 0;
+//				while (j < i ) {
+//					System.out.printf(" ");
+//					j++;
+//				}
+//				// 별
+//				int k = 0;
+//				while (k < h - i*2) {
+//					System.out.printf("*");
+//					k++;
+//				}
+//			}
+//			else {
+//			// 공백
+//				int j = 0;
+//				while (j < (h-i)-1) {
+//					System.out.printf(" ");
+//					j++;
+//				}
+//				// 별
+//				int k = 0;
+//				while (k <= (2*i)-(h+1)) {
+//					System.out.printf("*");
+//					k++;
+//				}
+//			}
+//			System.out.println();
+//			i++;
+//		}		
+//		sc.close();
 		
 		
 		

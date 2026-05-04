@@ -38,9 +38,6 @@ class Buyer {
 		// 사과개수를 현재 사과보유개수에 누적
 		this.appleCnt += receivedAppCnt;
 	}
-
-	
-
 	// toString
 	@Override
 	public String toString() {
@@ -61,24 +58,19 @@ class Seller {
 		int calAppCnt = money / price;
 		// 판매자의 보유 사과개수에서 차감(보유사과개수 vs 구매자 요청사과개수)
 		this.appleCnt -= calAppCnt;
-
 		// 계산된 사과 개수를 반환
 		return calAppCnt;
-
 	}
-
 	public Seller(int myMoney, int appleCnt, int price) {
 		super();
 		this.myMoney = myMoney;
 		this.appleCnt = appleCnt;
 		this.price = price;
 	}
-
 	@Override
 	public String toString() {
 		return "Seller [myMoney=" + myMoney + ", appleCnt=" + appleCnt + ", price=" + price + "]";
 	}
-
 }
 
 public class C12Ex_중요 {
