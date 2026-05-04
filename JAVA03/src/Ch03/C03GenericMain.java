@@ -39,7 +39,7 @@ class Woman extends Person {
 	
 }
 
-class Couple <M, W> {
+class Couple <M extends Person, W extends Person> {
 	private M role_man;
 	private W role_woman;
 	Couple(M role_man, W role_woman) {
