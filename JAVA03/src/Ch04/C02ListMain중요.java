@@ -1,12 +1,14 @@
 package Ch04;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 public class C02ListMain중요 {
 	
 	public static void main(String[] args) {
-		List<String> list = new ArrayList<String>();
+//		List<String> list = new ArrayList<String>();
+//		List<String> list = new LinkedList<String>();
+		List<String> list = new Vector<String>();
 		
 		//추가
 		list.add("HTML/CSS/JS");
