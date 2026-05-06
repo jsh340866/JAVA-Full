@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
+
 
 class Chat extends JFrame {
 
@@ -32,8 +32,8 @@ class Chat extends JFrame {
 		btn3.setBounds(330,140,135,50);
 		JTextField txt1 = new JTextField();
 		txt1.setBounds(20,385,300,50);
-		JTextField txt2 = new JTextField();
-		txt2.setBounds(330,385,135,50);
+		JButton btn4 = new JButton("입력");
+		btn4.setBounds(330,385,135,50);
 		
 
 		// Panel에 Component 추가
@@ -42,7 +42,7 @@ class Chat extends JFrame {
 		panel.add(btn2);
 		panel.add(btn3);
 		panel.add(txt1);
-		panel.add(txt2);
+		panel.add(btn4);
 		// Frame에 Panel 추가
 		add(panel);
 		setVisible(true);
