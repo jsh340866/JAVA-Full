@@ -19,6 +19,7 @@ public class C08PropertiesMain {
 		// separator = 경로 잡을때 그거 '/'
 //		System.out.println("filePath : " + filePath);
 		
+		
 		FileInputStream fin = new FileInputStream(filePath);
 		//
 		Properties properties = new Properties();
