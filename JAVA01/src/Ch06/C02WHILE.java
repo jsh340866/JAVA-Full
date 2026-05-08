@@ -310,24 +310,24 @@ public class C02WHILE {
 //		i<4					j<(h-1)-i				k<=i*2
 
 		
-		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt();
-		int i = 0;
-		while (i < n) {
-			int j = 0;
-			while (j < n - (i+1)) {
-				System.out.printf(" ");
-				j++;
-			}
-			int k = 0;
-			while (k <= i * 2) {
-				System.out.printf("*");
-				k++;
-			}
-			System.out.println();
-			i++;
-		}
-		sc.close();
+//		Scanner sc = new Scanner(System.in);
+//		int n = sc.nextInt();
+//		int i = 0;
+//		while (i < n) {
+//			int j = 0;
+//			while (j < n - (i+1)) {
+//				System.out.printf(" ");
+//				j++;
+//			}
+//			int k = 0;
+//			while (k < 2*i + 1) {
+//				System.out.printf("*");
+//				k++;
+//			}
+//			System.out.println();
+//			i++;
+//		}
+//		sc.close();
 
 // -----------------------------------------------------------------------
 
@@ -436,30 +436,30 @@ public class C02WHILE {
 //			i++;
 //		}
 
-//		Scanner sc = new Scanner(System.in);
-//		int h = sc.nextInt();
-//		int i = 0;
-//		int l = 0;
-//		while (i < h) {
-//			int j = 0;
-//			while (j < (h/2) - l) {
-//				System.out.printf(" ");
-//				j++;
-//			}
-//			int k = 0;
-//			while (k <= l*2) {
-//				System.out.printf("*");
-//				k++;
-//			}
-//			if ( i < (h/2)) {
-//				l++;
-//			}
-//			else l--;
-//			
-//			System.out.println();
-//			i++;
-//		}
-//		sc.close();
+		Scanner sc = new Scanner(System.in);
+		int h = sc.nextInt();
+		int i = 0;
+		int l = 0;
+		while (i < h) {
+			int j = 0;
+			while (j < (h/2) - l) {
+				System.out.printf(" ");
+				j++;
+			}
+			int k = 0;
+			while (k <= l*2) {
+				System.out.printf("*");
+				k++;
+			}
+			if ( i < (h/2)) {
+				l++;
+			}
+			else l--;
+			
+			System.out.println();
+			i++;
+		}
+		sc.close();
 
 // -----------------------------------------------------------------------
 		
