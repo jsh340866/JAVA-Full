@@ -4,8 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Savepoint;
 
-public class C08TxMain중요 {
+public class C08TxMain중요TRANSACTION {
 
 	public static void main(String[] args) {
 
@@ -19,6 +20,8 @@ public class C08TxMain중요 {
 		PreparedStatement pstmt = null; // SQL Qyery 전송용 객체
 		ResultSet rs = null; 			// Select 결과물 담을 객체
 
+		Savepoint sp1 = null;
+		
 		try {
 			
 			//
@@ -35,6 +38,8 @@ public class C08TxMain중요 {
 			//
 			pstmt = conn.prepareStatement("insert into tbl_a values(1,'a')");
 			pstmt.executeUpdate();
+			
+			sp1 = conn.setSavepoint("sp1");
 			
 			pstmt = conn.prepareStatement("insert into tbl_a values(2,'b')");
 			pstmt.executeUpdate();
@@ -54,7 +59,16 @@ public class C08TxMain중요 {
 			
 		}catch(Exception e) {
 			e.printStackTrace();
-			try {conn.rollback();}catch(Exception rollback) {rollback.printStackTrace();}
+			try {
+				if(sp1 != null) {
+					conn.rollback(sp1);
+				}
+				else {
+					conn.rollback();
+				}
+				conn.commit();
+				
+			}catch(Exception rollback) {rollback.printStackTrace();}
 		} finally {
 			try {pstmt.close();}catch(Exception e2) {e2.printStackTrace();}
 			try {conn.close();}catch(Exception e2) {e2.printStackTrace();}
