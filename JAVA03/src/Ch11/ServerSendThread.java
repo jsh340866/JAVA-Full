@@ -26,8 +26,8 @@ public class ServerSendThread implements Runnable {
 			try {
 				dout.writeUTF(send);
 				dout.flush();
-				if (send.equals("q"))
-					break;
+//				if (send.equals("q"))
+//					break;	// q종료는 recv에서만 이중확인은 꼬임.
 			} catch (IOException e) {
 				System.out.println("[EXCEPTION] : " + e.getCause());
 				break;
@@ -35,7 +35,7 @@ public class ServerSendThread implements Runnable {
 			}
 
 		}
-		sc.close();
+//		sc.close();
 
 	}
 

@@ -13,7 +13,7 @@ public class ClientMain {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		// 서버 생성
-		Socket server = new Socket("192.168.5.50", 7000);
+		Socket server = new Socket("192.168.5.50", 9000);
 		System.out.println("[CLIENT] SERVER와의 연결이 완료되었습니다.");
 
 		// 기본스트림 // 바이트 단위로 받음
@@ -68,6 +68,7 @@ public class ClientMain {
 //				break;
 //			
 //
+		
 //		}
 //		sc.close();
 		dout.close();

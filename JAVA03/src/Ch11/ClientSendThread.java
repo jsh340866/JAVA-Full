@@ -25,8 +25,8 @@ public class ClientSendThread implements Runnable {
 			try {
 				dout.writeUTF(send);
 				dout.flush();
-				if (send.equals("q"))
-					break;
+//				if (send.equals("q"))
+//					break;
 			} catch (IOException e) {
 				System.out.println("[EXCEPTION] : " + e.getCause());
 				break;
@@ -34,7 +34,7 @@ public class ClientSendThread implements Runnable {
 			}
 
 		}
-		sc.close();
+//		sc.close();
 
 	}
 
