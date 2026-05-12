@@ -23,6 +23,7 @@ public class ServerRecvThread implements Runnable {
 				break;
 			} catch (Exception e2) {
 				System.out.println("[ERROR] 기타 예외발생 : " + e2.getCause());
+				break;
 			}
 			if (recv.equals("q"))
 				break;

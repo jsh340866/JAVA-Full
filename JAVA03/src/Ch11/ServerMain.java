@@ -78,7 +78,7 @@ public class ServerMain {
 		in.close();
 		client.close();
 		server.close();
-		System.out.println("[SERVER] 연결 종료합니다.");
+		System.out.println("\n[SERVER] 연결 종료합니다.");
 
 	}
 

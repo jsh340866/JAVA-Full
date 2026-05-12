@@ -30,6 +30,7 @@ public class ServerSendThread implements Runnable {
 					break;
 			} catch (IOException e) {
 				System.out.println("[EXCEPTION] : " + e.getCause());
+				break;
 //				e.printStackTrace();
 			}
 
