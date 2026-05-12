@@ -12,12 +12,11 @@ public class C03Worker2 implements Runnable {
 	public void run() {
 
 		try {
+			
 			for (int i = 0;; i++) {
 				System.out.println("TASK02..." + i);
 				gui.area2.append("Task02..." + i + "\n");
-
 				Thread.sleep(500);
-
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
