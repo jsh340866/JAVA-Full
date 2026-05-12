@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class ClientMain {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
-		// 서버 생성
+		// 소켓 연결
 		Socket server = new Socket("192.168.5.50", 9000);
 		System.out.println("[CLIENT] SERVER와의 연결이 완료되었습니다.");
 
