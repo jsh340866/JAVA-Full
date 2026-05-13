@@ -14,6 +14,7 @@ class Singleton {
 
     private Singleton() {
         // private 생성자
+    	// 클래스 내에서만 객체 생성
     }
 
     public static Singleton getInstance() {

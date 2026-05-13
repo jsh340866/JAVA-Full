@@ -48,7 +48,7 @@ class Car {
             this.wheels = wheels;
         }
 
-        // 선택 속성 설정 메소드 (체이닝 방식)
+        // 선택 속성 설정 메소드 (체이닝 방식) // .찍고 이어서 쓰는방식
         public Builder sunroof(boolean sunroof) {
             this.sunroof = sunroof;
             return this;

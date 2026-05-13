@@ -50,7 +50,7 @@ class ProxyImage implements Image {
     }
 }
 
-public class C03프록시패턴 {
+public class C03프록시패턴_중요 {
     public static void main(String[] args) {
         Image img = new ProxyImage("photo.jpg");
 
