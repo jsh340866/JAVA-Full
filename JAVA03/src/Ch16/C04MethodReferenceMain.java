@@ -1,5 +1,6 @@
 package Ch16;
 
+import java.util.ArrayList;
 
 //(1) 문자열 -> 정수변환
 interface StrToInt {
@@ -39,6 +40,9 @@ interface PersonFactory {
 }
 interface PersonFactory2 {
 	C04Person create(String name, int age);
+}
+interface ListFactory {
+	ArrayList<String> create();
 }
 
 public class C04MethodReferenceMain {
@@ -88,6 +92,8 @@ public class C04MethodReferenceMain {
 		System.out.println(t10.create());
 		System.out.println(t11.create("홍길동",11));
 		
+		ListFactory t12 = ()->{return new ArrayList<>();};
+		ListFactory t13 = ArrayList::new;
 		
 		
 	}
