@@ -10,6 +10,8 @@ package Ch17;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class C01ExFilterMap {
 
@@ -20,13 +22,19 @@ public class C01ExFilterMap {
 		//     기대 : [2, 4, 6, 8, 10]
 		// ====================================================
 		List<Integer> nums = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-		// TODO 답안 작성
+		List<Integer> num2 = nums.stream().filter((e)->{return e%2==0;}).collect(Collectors.toList());
+		System.out.println(num2);
 
 		// ====================================================
 		// Q2. mixed 에서 음수만 골라 절댓값으로 변환해서 출력
 		//     기대 : [3, 1, 7]
 		// ====================================================
 		List<Integer> mixed = Arrays.asList(-3, 5, -1, 8, -7, 2);
+		List<Integer> mixedPlus = mixed .stream()
+										.filter(e->{return e<0;})
+										.map(e->{return e*(-1);})
+										.collect(Collectors.toList());
+		System.out.println(mixedPlus);
 		// TODO 답안 작성
 
 		// ====================================================
@@ -34,12 +42,25 @@ public class C01ExFilterMap {
 		//     기대 : [APPLE, BANANA, ELEPHANT]
 		// ====================================================
 		List<String> words = Arrays.asList("apple", "hi", "banana", "cat", "elephant");
+		List<String> wordPlus = words .stream()
+									  .filter(e->{return e.length()>4;})
+									  .map(e->{return e.toUpperCase();})
+									  .collect(Collectors.toList());
+		System.out.println(wordPlus);
 		// TODO 답안 작성
 
 		// ====================================================
 		// Q4. 1~20 중 3의 배수만 골라 제곱한 결과를 출력
 		//     기대 : [9, 36, 81, 144, 225, 324]
 		// ====================================================
+		
+		List<Integer> num = IntStream.range(1, 30).boxed().collect(Collectors.toList());
+		
+		List<Integer> num3 = num.stream()
+								.filter(e->{return e%3==0;})
+								.map(e->{return e*e;})
+								.collect(Collectors.toList());
+		System.out.println(num3);
 		// TODO 답안 작성
 
 		// ====================================================
@@ -47,6 +68,11 @@ public class C01ExFilterMap {
 		//     기대 : [a, a, a]
 		// ====================================================
 		List<String> words2 = Arrays.asList("apple", "banana", "ant", "kiwi", "avocado");
+		List<String> wordsA = words2.stream()
+									.filter(e->{return e.startsWith("a");})
+									.map(e->{return e.substring(0, 1);})
+									.collect(Collectors.toList());
+		System.out.println(wordsA);
 		// TODO 답안 작성
 	}
 }
