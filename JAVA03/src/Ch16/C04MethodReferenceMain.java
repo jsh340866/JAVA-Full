@@ -5,21 +5,40 @@ package Ch16;
 interface StrToInt {
 	int convert(String s);
 }
-
 //(2) 문자열을 받아 출력만 (반환 없음)
 interface StrConsumer {
 	void accept(String s);
 }
 //(2) 테스트 클래스
 class C04Person {
+	String name;
+	int age;
+	
+	C04Person(){}
+	C04Person(String name, int age){
+		this.name = name;
+		this.age = age;
+	}
 	
 	static void print(String s) {
 		System.out.println("Person's print : " + s);
 	}
+	@Override
+	public String toString() {
+		return "C04Person [name=" + name + ", age=" + age + "]";
+	}
+	
 }
 //(3) 문자열 -> 변형된 문자열 변환
 interface StrToStr {
 	String apply(String s);
+}
+//(4) 두 문자열 비교 -> 정수 결과
+interface PersonFactory {
+	C04Person create();
+}
+interface PersonFactory2 {
+	C04Person create(String name, int age);
 }
 
 public class C04MethodReferenceMain {
@@ -54,8 +73,21 @@ public class C04MethodReferenceMain {
 		
 		//(3) 문자열 -> 변형된 문자열 반환
 		StrToStr t7 = (s)->{return s.toUpperCase();};
+		StrToStr t8 = String::toUpperCase;
 		
 		System.out.println("(3-1) : " + t7.apply("apple"));
+		System.out.println("(3-2) : " + t8.apply("apple"));
+		System.out.println("------------------------------");
+		
+		//(4) 두 문자열 비교 -> 정수 결과
+		PersonFactory t9 = ()->{return new C04Person();};
+		PersonFactory t10 = C04Person::new;
+		PersonFactory2 t11 = C04Person::new;
+		
+		System.out.println(t9.create());
+		System.out.println(t10.create());
+		System.out.println(t11.create("홍길동",11));
+		
 		
 		
 	}
