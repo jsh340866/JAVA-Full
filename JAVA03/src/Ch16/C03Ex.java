@@ -11,7 +11,7 @@ public class C03Ex {
 	public static void main(String[] args) {
 		
 		Calculator add = (n1,n2)->{return n1 + n2;};
-		Calculator sub = (n1,n2)->{return n1 - n2;};
+		Calculator sub = (n1,n2)->{return (n1>n2)?n1-n2:n2-n1;};
 		Calculator mul = (n1,n2)->{return n1 * n2;};
 		Calculator div = (n1,n2)->{return n1 / n2;};
 		
