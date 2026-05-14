@@ -1,6 +1,6 @@
 package Ch19;
 
-@C01CustomAnnotation()
+@C01CustomAnnotation(value="홍길동", number=10000,isOpen=true)
 class Simple {
 	String value;
 	int number;
@@ -11,6 +11,9 @@ class Simple {
 		System.out.println("VALUE : " + ref.value());
 		System.out.println("NUMBER : " + ref.number());
 		System.out.println("ISOPEN : " + ref.isOpen());
+		this.value = ref.value();
+		this.number = ref.number();
+		this.isOpen = ref.isOpen();
 	}
 	
 }
