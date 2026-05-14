@@ -20,10 +20,10 @@ public class C11RestRequestResponseMain2중요 {
 
 		// ObjectMapper - JSON
 		// 01 파라미터 지정
-		String url = "https://thegoodnight.daegu.go.kr/ajax/api/thegoodnight.html?mode=json&item_count=10";
+		String url = "https://thegoodnight.daegu.go.kr/ajax/api/thegoodnight.html";
 		String mode = "json";
-		String addr = "관광숙박";
-		url += "?"+"mode="+mode+"&addr="+addr;
+		int item_count = 10;
+		url += "?"+"mode="+mode+"&item_count="+item_count;
 		System.out.println(url);
 		// 02 HTTP Request 구성
 		HttpRequest request = 	HttpRequest.newBuilder()
@@ -34,6 +34,7 @@ public class C11RestRequestResponseMain2중요 {
 		HttpClient httpClient = HttpClient.newHttpClient();
 		HttpResponse<String> response = 
 				httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+		System.out.println(response.body());
 										  
 		// 04 Response -> JAVA화( 1) ObjectMapper(JSON Type 유지) , 2) JAVA Class 변환 )
 		// 04-01) ObjectMapper(JSON Type 유지)
@@ -44,7 +45,7 @@ public class C11RestRequestResponseMain2중요 {
 //		JsonNode data = jsonNode.get("data");
 //		for(int i=0;i<data.size();i++) {
 //			JsonNode item = data.get(i);
-//			System.out.println(item);
+//			System.out.println(item.get("shop"));
 //		}	
 		
 
