@@ -2,6 +2,8 @@ package chat;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
@@ -34,6 +36,10 @@ public class MessengerHandler implements Runnable {
     public MessengerHandler(Socket socket) throws IOException {
         this.socket = socket;
         // TODO: in / out 스트림 초기화 (UTF-8 명시!)
+        InputStream tmpIn = socket.getInputStream();
+        InputStreamReader in_reader = new InputStreamReader(tmpIn);
+        in = new BufferedReader(in_reader);
+        out = new PrintWriter(socket.getOutputStream());
     }
 
     @Override
