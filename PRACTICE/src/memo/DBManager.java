@@ -54,7 +54,6 @@ public class DBManager {
     	try (InputStream fin = new FileInputStream("config/db.properties")){
 			prop.load(fin);
 		} catch (IOException e) {
-//			e.printStackTrace();
 			throw new RuntimeException("DBManager's getConnection() db.propertis..." + e.getCause());
 		}
     	String driver = prop.getProperty("db.driver");
@@ -68,7 +67,6 @@ public class DBManager {
     	try {
 			Class.forName(driver);
 		} catch (ClassNotFoundException e) {
-//			e.printStackTrace();
 			throw new RuntimeException("DBManager's getConnection() Class.forName..." + e.getCause());
 		}
     	
