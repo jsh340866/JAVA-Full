@@ -48,12 +48,20 @@ public class ChatServer {
         try {
             // ====== 학생 구현 시작 ======================================
             // TODO 1) ServerSocket(PORT) 생성 + 시작 로그 출력
+        	server = new ServerSocket(PORT);
+        	System.out.println("[ChatServer] 서버 시작 - PORT : " + PORT);
             // TODO 2) 무한 루프 안에서 accept() 로 Socket 받기
-            // TODO 3) 받은 Socket 으로 ChatHandler 생성 → clients 에 add → 새 Thread 로 start
+        	while(true) {
+        		Socket client = server.accept();
+        	// TODO 3) 받은 Socket 으로 ChatHandler 생성 → clients 에 add → 새 Thread 로 start
+        		ChatHandler handler = new ChatHandler(client);
+        		clients.add(handler);
+        		new Thread(handler).start();
+        	}
 
             // 학생이 위 TODO 를 모두 구현하면 아래 한 줄 삭제
-            throw new IOException("ChatServer.main() 가 아직 구현되지 않았습니다. (TODO)");
-            // ====== 학생 구현 끝 ========================================
+
+        	// ====== 학생 구현 끝 ========================================
         } catch (IOException e) {
             System.err.println("[ChatServer] 오류: " + e.getMessage());
             e.printStackTrace();
@@ -75,6 +83,12 @@ public class ChatServer {
     public static void broadcast(String message) {
         // TODO: 동기화 블록 안에서 clients 순회 → 각 handler.send(message) 호출
         System.out.println("[broadcast TODO] " + message);
+        synchronized (clients) {	// 임계설정
+    		for(ChatHandler h : clients ) {
+        		// h 의 outputstream 이용해서 내용 전달
+        		h.send(message);
+        	}
+		}
     }
 
     /** 클라이언트 접속 종료 시 컬렉션에서 제거 */

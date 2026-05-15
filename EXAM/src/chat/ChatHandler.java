@@ -2,6 +2,8 @@ package chat;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
@@ -39,6 +41,10 @@ public class ChatHandler implements Runnable {
         // TODO: in / out 스트림 초기화 (UTF-8 명시!)
         //   - in : BufferedReader + InputStreamReader(socket.getInputStream(), "UTF-8")
         //   - out: PrintWriter   + OutputStreamWriter(socket.getOutputStream(), "UTF-8"), autoFlush=true
+        InputStream tmpIn = socket.getInputStream();
+		InputStreamReader in_reader = new InputStreamReader(tmpIn);
+		in = new BufferedReader(in_reader);
+		out = new PrintWriter(socket.getOutputStream());
     }
 
     @Override
@@ -46,17 +52,33 @@ public class ChatHandler implements Runnable {
         try {
             // ====== 학생 구현 시작 ======================================
             // TODO 1) (선택) 첫 줄을 닉네임으로 받아 nickname 필드에 저장 + 입장 broadcast
+        	String nick = in.readLine();
+			if (nick != null && !nick.isBlank()) {
+				this.nickname = nick;
+			}
             // TODO 2) readLine() 반복 → null 이 아니면 ChatServer.broadcast(닉네임 + " : " + line)
+			String line = null; // 
+			while ((line = in.readLine()) != null) {
+				ChatServer.broadcast(nickname + " : " + line);
+			}
+
 
             // 학생이 위 TODO 를 모두 구현하면 아래 한 줄 삭제
-            throw new IOException("ChatHandler.run() 이 아직 구현되지 않았습니다. (TODO)");
+            
             // ====== 학생 구현 끝 ========================================
         } catch (IOException e) {
             System.err.println("[ChatHandler] " + nickname + " 접속 종료: " + e.getMessage());
         } finally {
             // TODO 3) ChatServer.remove(this) 로 컬렉션에서 제거
+        	ChatServer.remove(this);
+        	
             // TODO 4) in / out / socket 자원 해제 (각각 null 체크 + try-catch)
+        	try {socket.close();} catch (IOException e) {e.printStackTrace();}
+			try {in.close();} catch (IOException e) {e.printStackTrace();}
+			try {out.close();} catch (Exception e) {e.printStackTrace();}
+			
             // TODO 5) 퇴장 broadcast
+			ChatServer.broadcast("[퇴장] " + nickname);
         }
     }
 
@@ -67,6 +89,10 @@ public class ChatHandler implements Runnable {
      */
     public void send(String message) {
         // TODO: out 으로 한 줄 송신
+    	if (out != null) {
+			out.println(message);
+			out.flush();
+		}
     }
 
     public String getNickname() {
