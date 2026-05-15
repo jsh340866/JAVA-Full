@@ -110,8 +110,8 @@ public class BookDAO {
 			Book dto = null;
 			while(rs.next()) {
 				Book m = new Book();
-				m.setBookCode(rs.getString("bookCode"));
-				m.setClassificationId(rs.getInt("ClassificationId"));
+				m.setBookCode(rs.getString("Book_code"));
+				m.setClassificationId(rs.getInt("Classification_Id"));
 				m.setAuthor(rs.getString("author"));
 				m.setName(rs.getString("name"));
 				m.setPublisher(rs.getString("publisher"));

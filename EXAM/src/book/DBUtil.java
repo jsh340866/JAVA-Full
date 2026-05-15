@@ -61,12 +61,13 @@ public class DBUtil {
     	try (InputStream fin = new FileInputStream("config/db.properties")){
 			prop.load(fin);
 		} catch (IOException e) {
-			throw new RuntimeException("DBUtil's getConnection() db.propertis..." + e.getCause());
+			throw new RuntimeException("DBUtil's getConnection() db.properties..." + e.getCause());
 		}
     	String driver = prop.getProperty("db.driver");
     	String url = prop.getProperty("db.url");
     	String user = prop.getProperty("db.user");
     	String password = prop.getProperty("db.password");
+    	System.out.println(driver);
     	
     	
     	
