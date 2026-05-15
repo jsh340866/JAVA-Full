@@ -48,7 +48,9 @@ public class MessengerServer {
         		Socket client = server.accept();        	
         		
         		// TODO 3) 받은 Socket 으로 MessengerHandler 생성 → clients 에 add → 새 Thread 로 start
-        		
+        		MessengerHandler handler = new MessengerHandler(client);
+        		clients.add(handler);
+        		new Thread(handler).start();
         	}
         	
            
@@ -72,9 +74,19 @@ public class MessengerServer {
      *
      * <p>학생 TODO: clients 컬렉션을 (스레드 안전하게) 순회하며 각 핸들러의 send(message) 호출.</p>
      */
-    public static void broadcast(String message) {
+    public static void broadcast(String message) {	// 모든 클라이언트에게 메시지 날리기
         // TODO: 동기화 블록 안에서 clients 순회 → 각 handler.send(message) 호출
-        System.out.println("[broadcast TODO] " + message);
+//        System.out.println("[broadcast TODO] " + message);
+    	
+
+    	synchronized (clients) {	// 임계설정
+    		for(MessengerHandler h : clients ) {
+        		// h 의 outputstream 이용해서 내용 전달
+        		h.send(message);
+        	}
+		}
+    	
+    	
     }
 
     public static void remove(MessengerHandler handler) {
